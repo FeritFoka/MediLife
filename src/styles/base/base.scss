@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 * {
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif !important;
 }
 
 h1 {
@@ -13,7 +16,7 @@ p {
     font-weight: 100;
     line-height: 20px;
     letter-spacing: 0.5px;
-    margin: 20px 0 30px;
+    margin: 15px 0 30px;
 }
 
 span {
