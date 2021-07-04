@@ -6,15 +6,15 @@
 
           <div>
             <div class="medilife-contact-info">
-              <img src="/public/images/location-icon.png" class="contact-icon" alt="Medilife location icon" />
+              <img src="/public/images/location_icon.png" class="contact-icon" alt="Medilife location icon" />
               <p aria-readonly="true">Cara Hadrijana 10b, Osijek</p>
             </div>
             <div class="medilife-contact-info">
-              <img src="/public/images/email-icon.png" class="contact-icon" alt="Medilife email address icon" />
+              <img src="/public/images/email_icon.png" class="contact-icon" alt="Medilife email address icon" />
               <p aria-readonly="true">contact@medilife.com</p>
             </div>
             <div class="medilife-contact-info">
-              <img src="/public/images/phone-icon.png" class="contact-icon" alt="Medilife phone icon" />
+              <img src="/public/images/phone_icon.png" class="contact-icon" alt="Medilife phone icon" />
               <p aria-readonly="true">123-456-789</p>
             </div>
           </div>
