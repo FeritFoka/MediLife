@@ -42,4 +42,23 @@ final class DBAdmins
 
         return false;
     }
+
+    public function checkIfEmailInDatabase($email)
+    {
+
+        $query = $this->getAdminsByEmail($email);
+
+        try {
+            $row = $query->fetch();
+            if ($row["email"] != "" && $row["email"] == $email) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return false;
+    }
 }
