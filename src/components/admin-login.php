@@ -1,13 +1,13 @@
 <section class="section-admin-login">
 
-    <form class="login-container admin-form" action="#">
+    <form class="login-container admin-form" method="post" action="./login/validate-login.php">
         <h1 aria-readonly="true">Sign in</h1>
         <div class="admin-icon">
             <a role="link" href="#"><i class="fa fa-key" aria-hidden="true"></i></a>
         </div>
         <span class="admin-panel">Admin panel</span>
-        <input role="input" class="admin-input" type="email" placeholder="Email" />
-        <input role="input" class="admin-input" type="password" placeholder="Password" />
+        <input role="input" class="admin-input" type="email" name="email" placeholder="Email" />
+        <input role="input" class="admin-input" type="password" name="password" placeholder="Password" />
         <a role="link" href="#">Forgot your password?</a>
         <button type="submit" role="button" aria-pressed="false" class="admin-button">Sign In</button>
     </form>
