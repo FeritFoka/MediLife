@@ -232,4 +232,4 @@ CREATE TABLE IF NOT EXISTS `medi_life`.`admins` (
     PRIMARY KEY (id)
     ) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;
 
-INSERT INTO `medi_life`.`admins`(email, pass, id) VALUES ('admin@medilife.com', '62c798f0f8712e3bb88a8cd07393f335a7a6b49e0db8eb9c17b85e03a795183c', 42);
+INSERT INTO `medi_life`.`admins`(email, pass, id) VALUES ('admin@medilife.com', '$2y$10$7Zv8jYnX4RLSqLyI4odb6eys79m61Vm.FCK.6NrLa88FVTlKThkEi', 42);
