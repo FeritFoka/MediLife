@@ -8,7 +8,7 @@
         <span class="admin-panel">Admin panel</span>
         <input role="input" class="admin-input" type="email" name="email" placeholder="Email" />
         <input role="input" class="admin-input" type="password" name="password" placeholder="Password" />
-        <a role="link" href="#">Forgot your password?</a>
+        <a role="link" href="./reset-password.php">Forgot your password?</a>
         <button type="submit" role="button" aria-pressed="false" class="admin-button">Sign In</button>
     </form>
 
