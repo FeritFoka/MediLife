@@ -24,6 +24,25 @@ final class DBAdmins
         return $this->connection->sendQuery($sql);
     }
 
+    public function getAdminsIdByEmail($email)
+    {
+
+        $query = $this->getAdminsByEmail($email);
+
+        try {
+            $row = $query->fetch();
+            if ($row["email"] != "" && $row["email"] == $email) {
+                return $row["id"];
+            } else {
+                return -1;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return -1;
+    }
+
     public function checkIfLoginIsValid($email, $password)
     {
 
@@ -32,6 +51,59 @@ final class DBAdmins
         try {
             $row = $query->fetch();
             if (password_verify($password, $row["pass"])) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return false;
+    }
+
+    public function checkIfEmailInDatabase($email)
+    {
+
+        $query = $this->getAdminsByEmail($email);
+
+        try {
+            $row = $query->fetch();
+            if ($row["email"] != "" && $row["email"] == $email) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return false;
+    }
+
+
+    public function updatePassword($email, $newPassword, $token)
+    {
+
+        $query = $this->getAdminsByEmail($email);
+
+        try {
+            $row = $query->fetch();
+            if (password_verify($row["id"], $token)) {
+
+                $table = DBConfig::ADMIN_TABLE;
+
+                $values = array(
+                    ':newPassword' => password_hash($newPassword, PASSWORD_DEFAULT),
+                    ':id' => $row["id"],
+                );
+
+                $sql = <<<EOSQL
+                UPDATE $table SET pass = :newPassword WHERE id = :id;
+                EOSQL;
+
+                $this->connection->sendQueryWithValues($sql, $values);
+
                 return true;
             } else {
                 return false;
