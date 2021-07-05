@@ -1,3 +1,16 @@
+<?
+session_start();
+
+$msg = "";
+
+if ($_SESSION["mailOutStatus"] == "failure") {
+    $msg = "Enter all fields correctly.";
+} else if ($_SESSION["mailOutStatus"] == "success") {
+    $msg = "Mail sent!";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="hr">
 
@@ -14,6 +27,15 @@
 <body class="send-email-background">
 
     <?php include "../src/components/send-email-form.php"; ?>
+
+    <?
+    if ($msg != "") {
+        echo <<<TEXT
+      <p class="email-info">{$msg}</p>
+      TEXT;
+    }
+    $_SESSION["mailOutStatus"] = "";
+    ?>
 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>
     <script src="./dist/bundle.js"></script>

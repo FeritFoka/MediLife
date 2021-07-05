@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once("../../src/components/email/Mailer.php");
 
 $name = "";
@@ -13,17 +15,18 @@ if (isset($_POST["name"]) && isset($_POST["email"]) && isset($_POST["phone"]) &&
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $phone = filter_var($_POST["phone"], FILTER_SANITIZE_NUMBER_INT);
     $msg = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
-} else {
 
-    header("Location: ../send-email.php");
-    exit();
-}
-
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
     $mailer = new Mailer();
-    $mailer->sendEmail($name, $email, $phone, $msg);
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL) && $mailer->sendEmail($name, $email, $phone, $msg) == "Message sent!") {
+        $_SESSION["mailOutStatus"] = "success";
+    } else {
+        $_SESSION["mailOutStatus"] = "failure";
+    }
 } else {
-    echo "Smth failed";
-    // TODO SESSION ALERT
+    $_SESSION["mailOutStatus"] = "failure";
 }
+
+header("Location: ../send-email.php");
+exit();
