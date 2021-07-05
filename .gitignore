@@ -85,3 +85,4 @@ web_modules/
 public/styles.css
 public/dist
 /database
+vendor/

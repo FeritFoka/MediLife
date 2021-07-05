@@ -50,7 +50,7 @@
           <span class="circle one"></span>
           <span class="circle two"></span>
 
-          <form class="send-email-card" action="#">
+          <form class="send-email-card" method="post" action="./email/send-mail.php">
             <h3 aria-readonly="true" class="send-email-title">Contact us</h3>
             <div class="email-input-container">
               <input type="text" name="name" class="email-input" placeholder="Name" />
