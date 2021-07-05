@@ -16,6 +16,7 @@
     <?php include "../src/components/send-email-form.php"; ?>
 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>
+    <script src="./dist/bundle.js"></script>
 
 </body>
 
