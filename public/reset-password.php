@@ -19,26 +19,38 @@ session_start();
 
     <section class="section-forgot-pass">
 
-        <form class="forgot-pass-container forgot-pass-form" method="post" action="./login/validate-reset.php">
-            <h1 aria-readonly="true">Reset Password</h1>
-            <span class="forgot-pass-panel">Enter your email</span>
-            <input role="input" class="forgot-pass-input" type="email" name="email" placeholder="Email" />
-            <?php if ($_SESSION["resetEmailValidity"] == "true") : ?>
-                <p class="reset-pass-msg">Enter your new password.</p>
-                <input role="input" class="forgot-pass-input" type="password" name="password" placeholder="New password" />
-            <?php endif ?>
+        <? if (empty($_SESSION["email"])) : ?>
+            <form class="forgot-pass-container forgot-pass-form" method="post" action="./login/validate-reset.php">
+            <? else : ?>
+                <form class="forgot-pass-container forgot-pass-form" method="post" action="./index.php">
+                <? endif ?>
 
-            <?php if ($_SESSION["resetEmailValidity"] == "false") : ?>
-                <p class="reset-pass-msg">Email you provided is not an admin.</p>
+                <h1 aria-readonly="true">Reset Password</h1>
 
-            <?php endif ?>
+                <? if (empty($_SESSION["email"])) : ?>
+                    <span class="forgot-pass-panel">Enter your email</span>
+                    <input role="input" class="forgot-pass-input" type="email" name="email" placeholder="Email" />
+                <? endif ?>
 
-            <?php if ($_SESSION["noResetEmail"] == "true") : ?>
-                <p class="reset-pass-msg">Enter email for the account you wish to reset.</p>
 
-            <?php endif ?>
-            <button type="submit" role="button" aria-pressed="false" class="forgot-pass-button">Send reset link</button>
-        </form>
+                <? if ($_SESSION["resetEmailValidity"] == "true") : ?>
+                    <p class="reset-pass-msg" style="margin-top: 15px;">Reset link sent to <? echo $_SESSION["email"] ?>.</p>
+                <? endif ?>
+
+                <? if ($_SESSION["resetEmailValidity"] == "false") : ?>
+                    <p class="reset-pass-msg">Email you provided is not an admin.</p>
+                <? endif ?>
+
+                <? if ($_SESSION["noResetEmail"] == "true") : ?>
+                    <p class="reset-pass-msg">Enter email for the account you wish to reset.</p>
+                <? endif ?>
+
+                <? if (empty($_SESSION["email"])) : ?>
+                    <button type="submit" role="button" aria-pressed="false" class="forgot-pass-button">Send reset link</button>
+                <? else : ?>
+                    <button type="submit" role="button" aria-pressed="false" class="forgot-pass-button">Home</button>
+                <? endif ?>
+                </form>
 
     </section>
 
@@ -51,5 +63,6 @@ session_start();
 
 <?
 $_SESSION["resetEmailValidity"] = "";
-$_SESSION["noResetEmail"] = ""
+$_SESSION["noResetEmail"] = "";
+$_SESSION["email"] = "";
 ?>
