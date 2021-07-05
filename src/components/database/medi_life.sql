@@ -224,3 +224,12 @@ CREATE TABLE IF NOT EXISTS `medi_life`.`establish_diagnosis` (
     ON DELETE NO ACTION
     ON UPDATE CASCADE)
 DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `medi_life`.`admins` ( 
+    email VARCHAR(254) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL, 
+    pass VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL, 
+    id INT NOT NULL, 
+    PRIMARY KEY (id)
+    ) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;
+
+INSERT INTO `medi_life`.`admins`(email, pass, id) VALUES ('admin@medilife.com', '62c798f0f8712e3bb88a8cd07393f335a7a6b49e0db8eb9c17b85e03a795183c', 42);
