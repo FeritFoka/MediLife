@@ -24,6 +24,27 @@ final class DBAdmins
         return $this->connection->sendQuery($sql);
     }
 
+    public function getAdminsPassById($adminId)
+    {
+        $table = DBConfig::ADMIN_TABLE;
+        $sql = <<<EOSQL
+        SELECT pass FROM $table WHERE id = $adminId;
+        EOSQL;
+
+        $query = $this->connection->sendQuery($sql);
+
+        try {
+            $row = $query->fetch();
+            if (!empty($row["pass"])) {
+                return $row["pass"];
+            } else {
+                return false;
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+
     public function getAdminsIdByEmail($email)
     {
 
@@ -89,7 +110,7 @@ final class DBAdmins
 
         try {
             $row = $query->fetch();
-            if (password_verify($row["id"], $token)) {
+            if (password_verify($row["pass"] . $row["id"], $token)) {
 
                 $table = DBConfig::ADMIN_TABLE;
 
@@ -97,6 +118,13 @@ final class DBAdmins
                     ':newPassword' => password_hash($newPassword, PASSWORD_DEFAULT),
                     ':id' => $row["id"],
                 );
+
+                /* testing password reset with no hashing
+                $values = array(
+                    ':newPassword' => $newPassword,
+                    ':id' => $row["id"],
+                );
+                */
 
                 $sql = <<<EOSQL
                 UPDATE $table SET pass = :newPassword WHERE id = :id;

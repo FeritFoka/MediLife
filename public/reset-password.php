@@ -45,6 +45,10 @@ session_start();
                     <p class="reset-pass-msg">Enter email for the account you wish to reset.</p>
                 <? endif ?>
 
+                <? if ($_SESSION["invalidToken"] == "true") : ?>
+                    <p class="reset-pass-msg">Reset link was invalid. Try sending a new one.</p>
+                <? endif ?>
+
                 <? if (empty($_SESSION["email"])) : ?>
                     <button type="submit" role="button" aria-pressed="false" class="forgot-pass-button">Send reset link</button>
                 <? else : ?>
@@ -65,4 +69,5 @@ session_start();
 $_SESSION["resetEmailValidity"] = "";
 $_SESSION["noResetEmail"] = "";
 $_SESSION["email"] = "";
+$_SESSION["invalidToken"] = "";
 ?>

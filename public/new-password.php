@@ -33,19 +33,23 @@ if (empty($_GET["token"])) {
 
                 <h1 aria-readonly="true">Reset Password</h1>
 
-                <span class="forgot-pass-panel">Enter your email</span>
-                <input role="input" class="forgot-pass-input" type="email" name="email" placeholder="Email" />
+                <span class="forgot-pass-panel">Reset password for <? echo filter_var($_GET["email"], FILTER_SANITIZE_EMAIL); ?></span>
+
+                <input role="input" type="hidden" name="email" value="<? echo filter_var($_GET["email"], FILTER_SANITIZE_EMAIL); ?>" />
                 <input role="input" class="forgot-pass-input" type="password" name="password" placeholder="New Password" />
+
                 <? if ($_SESSION["emptyResetFields"] == "true") : ?>
                     <p class="reset-pass-msg">Enter all of the fields.</p>
                 <? endif ?>
-                <input role="input" type="hidden" name="token" value="<? echo $_GET["token"] ?>">
+                <input role="input" type="hidden" name="token" value="<? echo filter_var($_GET["token"], FILTER_SANITIZE_STRING); ?>">
                 <button type=" submit" role="button" aria-pressed="false" class="forgot-pass-button">Save password</button>
 
             </form>
 
     </section>
+
 <? endif ?>
+
 <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>
 <script src="./dist/bundle.js"></script>
 
