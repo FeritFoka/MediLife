@@ -233,3 +233,6 @@ CREATE TABLE IF NOT EXISTS `medi_life`.`admins` (
     ) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;
 
 INSERT INTO `medi_life`.`admins`(email, pass, id) VALUES ('admin@medilife.com', '$2y$10$7Zv8jYnX4RLSqLyI4odb6eys79m61Vm.FCK.6NrLa88FVTlKThkEi', 42);
+
+--email = admin@medilife.com
+--password = admin@medilife.com

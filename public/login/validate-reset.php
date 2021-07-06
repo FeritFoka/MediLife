@@ -10,19 +10,25 @@ if (!empty($_POST["email"])) {
 
     $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 
-    $adminChecker = new DBAdmins();
+    $dbAdmins = new DBAdmins();
 
-    if ($adminChecker->checkIfEmailInDatabase($email)) {
+    if ($dbAdmins->checkIfEmailInDatabase($email)) {
         $_SESSION["resetEmailValidity"] = "true";
         $_SESSION["email"] = $email;
 
-        $mailer = new Mailer();
-        $adminId = $adminChecker->getAdminsIdByEmail($email);
-        $token = password_hash($adminId, PASSWORD_DEFAULT);
 
+
+        $adminId = $dbAdmins->getAdminsIdByEmail($email);
+        $adminOldPassword = $dbAdmins->getAdminsPassById($adminId);
+
+        $token = password_hash($adminOldPassword . $adminId, PASSWORD_DEFAULT);
+
+        $baseLink = MailSettings::PASSWORD_RESET_BASE_LINK;
         $resetLink = <<<HTML
-        <a href="localhost/public/new-password.php?token={$token}">here</a>
+        <a href="{$baseLink}?token={$token}&email={$email}">here</a>
         HTML;
+
+        $mailer = new Mailer();
         $mailer->sendEmail("Medilife Admin Reset", MailSettings::EMAIL, NULL, "Click " . $resetLink . " to reset password.");
 
         header("Location: ../reset-password.php");
