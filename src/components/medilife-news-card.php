@@ -34,12 +34,12 @@
                             <span>June 20, 2021</span>
                             <h3 aria-readonly="true"><a href="#">Introducing a new healing process</a></h3>
                             <p aria-readonly="true">Fusce vel sem finibus, rhoncus massa non, aliquam velit. Nam et est ligula.</p>
-                            <div>
+                            
                                 <div>
                                     <h5 aria-readonly="true">Darko Žunec</h5>
                                     <p aria-readonly="true">General Director</p>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             <span>April 27, 2021</span>
                             <h3 aria-readonly="true"><a href="#">Review Annual Medical Research</a></h3>
                             <p aria-readonly="true">Vivamus non nulla semper diam cursus maximus. Pellentesque dignissim.</p>
-                                <img src="images/author-image.jpg" class="img-responsive" alt="">
+                                
                                 <div>
                                     <h5 aria-readonly="true">Jakov Glavina</h5>
                                     <p aria-readonly="true">Online Advertising</p>
