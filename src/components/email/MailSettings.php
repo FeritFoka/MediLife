@@ -6,5 +6,5 @@ final class MailSettings
     const TO_FILED = "Foka Ferit";
     const PASSWORD = "fokaFeritGrupa";
 
-    const PASSWORD_RESET_BASE_LINK = "localhost/public/new-password.php";
+    const PASSWORD_RESET_BASE_LINK = "https://foka-medilife.herokuapp.com/new-password.php";
 }
