@@ -10,8 +10,12 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.(png|jpg)$/,
-                loader: 'url-loader'
+                test: /\.(jp(e?)g|png|svg|gif)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 8192,
+                    name: "[name].[ext]"
+                },
             },
         ],
     },
