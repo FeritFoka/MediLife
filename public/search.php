@@ -18,6 +18,7 @@
 
     <?php require_once './lib/Kendo/Autoload.php'; ?>
     <?php include "../src/components/dashboard/header.php"; ?>
+    <?php include "../src/components/dashboard/finder.php"; ?>
     <?php include "../src/components/dashboard/footer.php"; ?>
 
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>

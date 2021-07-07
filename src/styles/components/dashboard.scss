@@ -24,3 +24,10 @@
 a.navigation, a:hover.navigation{
     font-size: x-large;
 }
+
+.dashboard_body{
+    background-image: url('/public/images/blue_circles.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
