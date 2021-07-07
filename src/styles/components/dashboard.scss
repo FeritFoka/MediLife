@@ -29,5 +29,7 @@ a.navigation, a:hover.navigation{
     background-image: url('/public/images/blue_circles.png');
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-flow: column;
     height: 100vh;
 }

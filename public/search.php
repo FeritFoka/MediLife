@@ -14,7 +14,7 @@
     <title>MediLife</title>
 </head>
 
-<body>
+<body class="dashboard_body">
 
     <?php require_once './lib/Kendo/Autoload.php'; ?>
     <?php include "../src/components/dashboard/header.php"; ?>

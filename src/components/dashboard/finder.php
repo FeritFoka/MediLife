@@ -73,8 +73,4 @@ $grid->addColumn($columnOib)
     ->pageable(true)
     ->groupable(true);
 
-?>
-
-<div class="dashboard_body">
-    <?= $grid->render(); ?>
-</div>
+echo $grid->render();

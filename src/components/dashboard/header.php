@@ -2,6 +2,7 @@
 
     $appbar = new \Kendo\UI\AppBar('header');
     $appbar->position("top");
+    $appbar->positionMode('sticky');
 
     $logoItem = new \Kendo\UI\AppBarItem();
     $logoItem->type('contentItem');
