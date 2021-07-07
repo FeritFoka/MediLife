@@ -1,3 +1,10 @@
+<?php
+if (!isset($_COOKIE["admin_credentials"])) {
+    header("Location: ./admin.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="hr">
 
