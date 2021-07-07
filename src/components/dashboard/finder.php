@@ -1,7 +1,7 @@
 <?php
 
 $read = new \Kendo\Data\DataSourceTransportRead();
-$read->url('../src/components/requests/doctors_institution_spec.php')
+$read->url('./requests/doctors_institution_spec.php')
     ->contentType('application/json')
     ->type('POST');
 
