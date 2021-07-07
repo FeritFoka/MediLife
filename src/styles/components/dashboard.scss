@@ -21,8 +21,13 @@
     height: auto;
 }
 
-a.navigation, a:hover.navigation{
+a.navigation, a:hover.navigation, .navigation{
     font-size: x-large;
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .dashboard_body{

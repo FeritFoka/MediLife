@@ -16,6 +16,10 @@
     $findItem->type('contentItem');
     $findItem->template('<a href="./search.php" class="navigation">Find</a>');
 
+    $logoutItem = new \Kendo\UI\AppBarItem();
+    $logoutItem->type('contentItem');
+    $logoutItem->template('<form action="./login/logout.php" method="post"><button type="submit" class="navigation">Logout</button></form>');
+
     $spacer = new \Kendo\UI\AppBarItem();
     $spacer->type('spacer');
     $spacer->width(30.0);
@@ -25,5 +29,7 @@
     $appbar->addItem($homeItem);
     $appbar->addItem($spacer);
     $appbar->addItem($findItem);
+    $appbar->addItem($spacer);
+    $appbar->addItem($logoutItem);
 
     echo $appbar->render();
