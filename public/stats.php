@@ -10,7 +10,9 @@
     <link href="styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
     <link href="styles/kendo.blueopal.min.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery.min.js"></script>
-    <script src="js/kendo.web.min.js"></script>
+    <script src="js/kendo.web.min.js"></script>    
+    <script src="js/kendo.all.min.js"></script>
+
     <title>MediLife</title>
 </head>
 
