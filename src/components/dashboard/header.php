@@ -16,10 +16,6 @@
     $findItem->type('contentItem');
     $findItem->template('<a href="./search.php" class="navigation">Find</a>');
 
-    $statsItem = new \Kendo\UI\AppBarItem();
-    $statsItem->type('contentItem');
-    $statsItem->template('<a href="./stats.php" class="navigation">Statistics</a>');
-
     $spacer = new \Kendo\UI\AppBarItem();
     $spacer->type('spacer');
     $spacer->width(30.0);
@@ -29,7 +25,5 @@
     $appbar->addItem($homeItem);
     $appbar->addItem($spacer);
     $appbar->addItem($findItem);
-    $appbar->addItem($spacer);
-    $appbar->addItem($statsItem);
 
     echo $appbar->render();
