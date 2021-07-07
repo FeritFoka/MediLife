@@ -130,6 +130,9 @@ DEFAULT CHARACTER SET = utf8;
 INSERT INTO `medi_life`.`doctor` VALUES ('032568556912', '55456326589', 'Ivica', 'Škoro', 'M', '1981/01/25', '00001', '55469', '036');
 INSERT INTO `medi_life`.`doctor` VALUES ('659336521302', '42366520012', 'Silvio', 'Mihaljević', 'M', '1991/05/15', '00002', '55469', '017');
 INSERT INTO `medi_life`.`doctor` VALUES ('448965230256', '87988759845', 'Ivica', 'Mihaljević', 'M', '1993/08/01', '00003', '55469', '028');
+INSERT INTO `medi_life`.`doctor` VALUES ('111203291234', '09099192834', 'Matko', 'Kičmarević', 'M', '1997/08/01', '00003', '55469', '028');
+INSERT INTO `medi_life`.`doctor` VALUES ('221938122912', '13059930212', 'Darija', 'Dalik', 'F', '1993/08/01', '00003', '55469', '028');
+INSERT INTO `medi_life`.`doctor` VALUES ('111203921342', '34913823412', 'Sanja', 'Sočivica', 'F', '1998/08/01', '00002', '55469', '028');
 INSERT INTO `medi_life`.`doctor`(doctor_id, OIB, name, surname, sex, active_from, institution_id, employment_id) VALUES('336521008975', '54230101256', 'Srđan', 'Čalošević', 'M', '2000/10/10', '00005', '55469');
 
 -- Creating table diagnosis and inserting values

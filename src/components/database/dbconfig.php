@@ -7,6 +7,11 @@ final class DBConfig
     const USERNAME = 'x5k2q02ms7urbkwf';
     const PASS = 'u6h7j5sh1st4ustr';
 
+    #const HOST = 'db';
+    #const DB_NAME = 'medi_life';
+    #const USERNAME = 'user';
+    #const PASS = 'user';
+
     const ADMIN_TABLE = 'admins';
     const DOCTOR_TABLE = 'doctor';
     const PATIENT_TABLE = 'patient';
