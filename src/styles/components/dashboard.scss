@@ -33,3 +33,50 @@ a.navigation, a:hover.navigation{
     flex-flow: column;
     height: 100vh;
 }
+
+.section-dashboard-home {
+    margin: auto;
+    background: #bbd5e4;
+    background: -webkit-linear-gradient(to right, #bbd5e4, #b8bcbe);
+    background: linear-gradient(to right, #bbd5e4, #b8bcbe);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    width: 90%;
+    margin-top: 5%;
+    padding: 25pt;
+  }
+  
+  .dashboard-title, .dashboard-home-title {
+    font-style: normal;
+    font-weight: 300 !important;
+    color: #3f4255;
+    letter-spacing: 0.08em;
+    margin-top: 20px;
+  }
+  
+  .dashboard-home-title {
+    margin: 0 15px 0 15px;
+    color: #308ee6;
+    font-size: 2em;
+  }
+  
+  .dashboard-info {
+    font-style: normal;
+    font-weight: 400 !important;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    color: #3f4255;
+    margin-top: 30px;
+  }
+  
+  .dashboard-username {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    color: #3750f3;
+    margin-left: 20px;
+  }
