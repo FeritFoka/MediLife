@@ -8,7 +8,7 @@
     <meta name="viewport" content="user-scalable = yes">
     <link rel="stylesheet" href="./dist/style.css">
     <link href="styles/kendo.common.min.css" rel="stylesheet" type="text/css" />
-    <link href="styles/kendo.default.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/kendo.blueopal.min.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery.min.js"></script>
     <script src="js/kendo.web.min.js"></script>
     <title>MediLife</title>
