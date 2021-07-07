@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  www:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html/
+    depends_on:
+      - db
+    networks:
+      - default
+  db:
+    image: mysql:5.6
+    ports:
+      - "3306:3306"
+    command: --init-file /var/tmp/init/medi_life.sql
+    restart: always
+    environment:
+      MYSQL_DATABASE: medi_life
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./database:/var/lib/mysql
+      - ./src/components/database:/var/tmp/init/
+    networks:
+      - default
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+    ports:
+      - 8000:80
+    networks:
+      - default
+volumes:
+  dbdata:

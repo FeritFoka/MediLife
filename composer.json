@@ -1,0 +1,7 @@
+{   
+    "name": "test/medilife",
+    "description": "",
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}
