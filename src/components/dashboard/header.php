@@ -6,7 +6,7 @@
 
     $logoItem = new \Kendo\UI\AppBarItem();
     $logoItem->type('contentItem');
-    $logoItem->template('<img src="./images/logo.png" width="150px", height="50px"');
+    $logoItem->template('<a href="./index.php"><img src="./images/logo.png" class="logo"></img></a>');
 
     $homeItem = new \Kendo\UI\AppBarItem();
     $homeItem->type('contentItem');
