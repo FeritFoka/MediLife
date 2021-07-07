@@ -9,7 +9,7 @@
 
                     <div class="footer-contact-info">
                         <p aria-readonly="true"><i class="fa fa-phone"></i> 010-234-987</p>
-                        <p aria-readonly="true"><i class="fa fa-envelope"></i> <a href="#">info@medilife.com</a></p>
+                        <p aria-readonly="true"><i class="fa fa-envelope"></i> <a href="mailto:info@medilife.com">info@medilife.com</a></p>
                     </div>
                 </div>
             </div>

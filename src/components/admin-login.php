@@ -17,9 +17,9 @@
             <div class="admin-home-panel">
                 <h1 aria-readonly="true">Hello, Admin!</h1>
                 <p aria-readonly="true">Enter your login data and start journey with us or just back home</p>
-		<form action="index.php">
-                     <button role="button" aria-pressed="false" class="admin-button admin-home-button">Home</button>
-		</form>
+                <form method="post" action="index.php">
+                    <button role="button" aria-pressed="false" class="admin-button admin-home-button">Home</button>
+                </form>
             </div>
         </div>
     </div>

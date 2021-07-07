@@ -11,7 +11,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
 
     if ($adminChecker->checkIfLoginIsValid($email, $password)) {
         setcookie("admin_credentials", "1", 0, "/");
-        header("Location: ../send-email.php");
+        header("Location: ../dashboard.php");
         exit();
     } else {
         header("Location: ../admin.php");
